@@ -1,0 +1,17 @@
+<%= content_tag :div, class: 'card-deck' do %>
+  <%= card style: "width: 18rem" do %>
+    <%= card_block src: @artist.image  %>
+    <%= card_header @artist.name %>
+  <% end %>
+
+
+
+  <%= card  do %>
+    <%= card_body do %>
+      <%= card_title "Upcoming Shows" %>
+        <%= render 'shows_li', shows: @artist.shows %>
+    <% end %>
+  <% end %>
+
+
+<% end %>

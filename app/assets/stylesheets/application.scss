@@ -1,0 +1,101 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require easy-autocomplete
+ */
+
+
+ @import 'bootstrap';
+
+ @import "font-awesome";
+
+// Link Styling
+ .style-1 {
+    color: black;
+}
+
+.style-1:hover,
+.style:focus {
+    color: black;
+    text-decoration: underline;
+}
+
+// input field styling for bootstrap
+.form-control { border: 1px solid black;}
+
+// keeps navbar on left edge of container
+.navbar-expand-lg,
+.navbar-nav {
+    margin: 0 -15px;
+}
+
+//error class for invalid fields
+.error { border: 1px solid red; }
+
+//error class for invalid field messages
+.feedback {
+   color: red;
+   font-size: small;
+ }
+
+//additional classes to add date on top of show cards
+.card-img-overlay
+{
+    position: absolute;
+    background: #FAFAF9;
+    border-radius: 5%;
+    top:86%;
+    left:80%;
+    // display:inline;
+    // font-size: 50%;
+    color: black;
+    text-align: center;
+
+    padding: .1rem 0;
+}
+
+//had to put card images in a thumbnail to absolutely position card-img-overlay
+
+
+.thumbnail{
+    position:relative;
+}
+
+// .small-screen-disappear{
+//   display: inline;
+// }
+
+// .footer {
+//   background-color: black;
+//   color: white;
+// }
+
+
+// bigger iphone
+@media only screen and (max-width: 735px) {
+    /* For mobile phones: */
+}
+
+// make hamburger stay on right for very small screens
+@media (max-width: 320px) {
+    /* For mobile phones: */
+  .nav-link  {
+    padding: 0 ;
+  }
+}
+
+@media (min-height: 799px) {
+  .card-img-overlay {
+    top:90%;
+    font-size: 150%;
+  }
+}

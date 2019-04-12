@@ -1,0 +1,35 @@
+
+<div class="d-flex justify-content-center  ">
+  <div class='row'>
+    <%= form_tag'/login', class: 'form-signin'   do  %>
+
+      <%= content_tag :div, class: "text-center" do %>
+
+        <p>Login is only necessary <br> to create or edit events </p>
+      <% end %>
+
+      <%= content_tag :div, class: "form-label-group mx-sm-7 mb-2" do %>
+        <%= label_tag :email %>
+        <%= text_field_tag :email, nil, {class: "form-control", placeholder: "Email address"} %>
+      <% end %>
+
+      <%= content_tag :div, class: "form-label-group mx-sm-7 mb-2" do %>
+        <%= label_tag :password %>
+        <%= text_field_tag :password, nil, {class: "form-control" , placeholder: "Password"} %>
+      <% end %>
+
+      <p><%= submit_tag("Login", {class: "btn btn-lg btn-dark btn-block mb-2 my-4"}) %></p>
+      <div class='text-center mb-2  '><%= link_to "Sign up", new_user_registration_path, class: 'style-1' %></div>
+      <p class='text-center'><%= link_to'Log in with Google', '/auth/google_oauth2', class: 'style-1' %></p>
+      <%= link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path %>
+
+      <%= content_tag :p, class: "mt-5 mb-3 text-muted text-center" do %>
+        © 2018
+      <% end %>
+
+
+
+    <% end %>
+
+  </div>
+</div>

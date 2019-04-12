@@ -1,0 +1,24 @@
+
+<%= content_tag :div, class: 'row' do %>
+  <%= content_tag :div, class: 'col-lg-8' do %>
+    <%= image_tag @show.poster, class: 'img-fluid', style: 'width: 100%' %>
+    <%= render 'edit' %>
+    <%= link_to "Previous Show", "#", class: 'style-1', data: {id: @show.id, city: @show.city.name, city_id: @show.city.id  }, id: 'previous-show'  %>
+    <%= link_to "Next Show", "#", class: 'style-1', data: {id: @show.id, city: @show.city.name, city_id: @show.city.id  }, id: 'next-show'  %>
+  <% end %>
+
+  <%= content_tag :div, class: 'col-lg-4' do %>
+
+    <%= render "headline" %>
+
+
+    <h5>Venue: <%= link_to @show.venue.name, venue_path(@show.venue), class: 'style-1' %></h5>
+
+    <% @show.artists.each do |artist| %>
+      <%= card style: "width: 100%" do  %>
+        <a href="<%= artist_path(artist) %>"><%= card_block src: artist.image, data: {id: artist.id} %></a>
+        <%= card_title link_to artist.name, artist_path(artist), class: 'style-1' %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>
